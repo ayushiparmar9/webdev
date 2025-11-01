@@ -1,0 +1,29 @@
+#a{
+display:grid;
+border: 1px solid black;
+grid-template-columns: 500px 400px;
+justify-content: center;
+height:1200px;
+
+}
+#b{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    
+    
+    
+   width:400px;
+   height: 600px;
+   border: 1px solid black;
+   margin-top: 300px;
+
+}
+#c{
+    margin-top: 100px;
+    width:400px;
+    height:1200px;
+    border:1px solid black;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    
+}
