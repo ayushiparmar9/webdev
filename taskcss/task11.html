@@ -11,8 +11,8 @@
     />
   </head>
   <body>
-    <div id="aa">
-      <div id="b" class="form">
+    <div id="main">
+      <div id="loginform" class="form">
         <h1>login</h1>
         <br />
         <div>
@@ -25,6 +25,7 @@
           />
         </div>
         <div>
+          <i class="bi bi-key"></i>
           <input
             type="password"
             name="passward"
@@ -38,15 +39,18 @@
               >remember me</span
             >
           </div>
-          <a href="#">forget passward</a>
+          <div><a href="#">forget passward</a></div>
         </div>
         <button type="submit">login</button>
         <p>dont have an account?<a href="#">sign up now</a></p>
       </div>
 
-      <div id="c" class="form">
+      <div id="registrationform" class="form">
         <h1>Registration</h1>
         <br />
+        <div>
+          <i class="bi bi-person"></i>
+
         <input
           type="text"
           name="name"
@@ -54,30 +58,34 @@
           placeholder="Enter your name"
         />
 
-        <input
+        </div>
+        <div>
+          <i class="bi bi-envelope-at"></i>
+
+          <input
           type="email"
           name="email"
           id="email"
           placeholder="enter your email"
         />
-
+        </div>
+         <div><i class="bi bi-key"></i>
         <input
           type="password"
           name="password"
           id="password"
           placeholder="enter password"
-        />
-
+        /></div>
+         <div><i class="bi bi-key-fill"></i>
         <input
           type="password"
           name="confirmPassword"
           id="confirmPassword"
           placeholder="confirm your password"
-        />
+        /></div>
 
-        <input type="checkbox" name="accept" id="accept" value="accept" /><span
-          >i accept all the terms and conditions</span
-        >
+       <div class ="check"> <input type="checkbox" name="accept" id="accept" value="accept" /><span>i accept all the terms and conditions</span
+        ></div>
 
         <button type="submit">register now</button>
 
