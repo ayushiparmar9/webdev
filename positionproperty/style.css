@@ -1,6 +1,14 @@
-    *{
-margin: 0
-padding: 0
+  :root{
+    --primary:blue;
+    --secondary:gray;
+    tertiary:rgb(84,84,84);
+    --text:whitesmoke;
+  }
+  
+  
+  *{
+margin: 0;
+padding: 0;
     }
     
     
@@ -11,16 +19,35 @@ padding: 0
     display: flex;
     justify-content: space-between;
     justify-items: center;
+    padding:5px 10px;
+    justify-items: center;
     align-items: center;
     position:sticky;
+    z-index: 99;
+    top:30px;
 }
 #links{
    display: flex; 
    gap: 20px;
 }
-button{
+#b1{
     position:fixed;
+    
     bottom:40px;
     right:40px;
+
+}
+#newdiv{
+  width:70vw;
+  height:70vh;
+  border:1px solid black;
+  background-color: blueviolet;
+  position:relative;
+  margin:150px;
+}
+#b2{
+  position:absolute;
+  bottom:20px;
+
 
 }

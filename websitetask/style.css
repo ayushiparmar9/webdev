@@ -1,0 +1,742 @@
+  *{
+    margin:0;
+    padding: 0;
+    
+  }
+  body{
+   
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+
+
+  }
+  
+  
+  
+  #navbar{
+    width:vw;
+    height:80px;
+    
+    display:flex;
+
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    background-color:white ;
+    padding:5px 70px;
+    border-radius: 3%;
+    position:sticky;
+    top:0px;
+    z-index: 99;
+   
+      
+      
+
+    }
+ #mid{
+        
+    
+       border: 1px solid white;
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+      gap:20px;
+      
+      
+}
+    
+    
+    #end{
+        display: flex;
+        gap:5px;
+    }
+    #b1{height: 40px;
+        width: 90px;
+            background-color: white;
+            color:black
+            
+        }
+        button{
+            border: none;
+        }
+        #b2{
+            height: 40px;
+        width: 90px;
+ background-color: black;
+ color: white;
+  border-radius :10px;
+    
+        }
+        #bdiv2{
+            box-shadow: 0 0 1px 1px;
+              background-color: black;
+            border-radius :10px;
+        }
+
+
+
+        /* navbar */
+
+
+#first{
+    
+    width: vw;
+    height:750px;
+    display: flex;
+}
+#emailsubmit{
+    margin-bottom: 15px;
+}
+#welcome{
+    width:50vw;
+    border:1px solid white;
+    padding:120px 80px;
+    p{
+        margin-top:20px; ;
+    }
+    span{
+        color:grey;
+        
+    }
+    a{
+        color:grey;
+    }
+}
+#image{
+width:50vw;
+padding:40px;
+
+
+img{
+    width:600px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+}
+#p1{
+    font-size: 50px;
+    font-weight: 700;
+}
+#p2{
+    margin-top: 40px; 
+    color: grey;
+    font-size:20px ;
+    word-spacing: 20px;
+    line-height:30px ;
+    
+}
+
+#Ac{
+    color:black;
+}
+
+
+#file{
+    color:black;
+}
+#doc{
+    color:black;
+}
+#emailsubmit{
+    display: flex;
+    gap:10px;
+}
+input{
+    height: 35px;
+    width: 350px;
+    
+    
+}
+#b3{
+            height: 40px;
+        width: 140PX;
+ background-color: black;
+ color: white;
+  border-radius :10px;
+  padding: 5PX;
+    
+        }
+        #b3div{
+            box-shadow: 0 0 1px 1px;
+              background-color: black;
+            border-radius :10px;
+            margin-top: 8px;
+        }
+        #mail{
+            border: 1px solid grey;
+            margin-top: 8px;
+            border-radius:10px; 
+            padding:5px;
+        }
+        span{
+            margin-top: 3px;
+        }
+        
+#p3{
+    margin: 0px  650px;
+    font-size: medium;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.744);
+}
+#companyicons{
+    border:1px solid white;
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    justify-content:space-around ;
+    margin-top: 30px;
+    margin-left:120px; ;
+    width:1200px;
+    
+
+}
+.logo{
+    
+   
+    img{ 
+        object-fit: cover;
+         width:150px;
+    height:80px;
+    }
+
+}
+#p4{
+    
+    margin: 0px  670px;
+    margin-top: 100px;
+    font-size: large;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.744);
+
+}
+#p5{
+
+    margin-left:600px;
+     margin-top:8px;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.744);
+
+}
+#p6{
+    
+}
+
+#p6div{
+    border:1px solid white;
+     color: grey;
+    font-size:20px ;
+    word-spacing: 10px;
+    line-height:30px ;
+   margin-left:120px; 
+    width:1200px;
+    padding:5px;
+    justify-content: center;
+}
+#p7{
+margin-left:400px;
+}
+#bigbox{
+    border: 1px solid white;
+    margin-top: 70px;
+    margin-left:120px; 
+    width:1200px;
+    height:600px;
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+}
+.box{
+    border: 1px solid white;
+    width: 400px;
+    height: 300px;
+    
+    
+}
+.a{
+     border: 1px solid white;
+     width: 400px;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
+    
+}
+.b{
+     border: 1px solid white;
+     font-size: 20px;
+     font-weight: 700;
+     color: rgba(0, 0, 0, 0.751);
+     width: 400px;
+    height: 50px;
+    text-align: center;
+    padding:4px 0px;
+    
+
+    
+}
+.c{
+    
+    text-align: center;
+    font-size: 17px;
+    word-spacing:3px; 
+    line-height: 27px;
+     color: grey;
+     
+}
+        
+#myp{
+    margin-top:60px ;
+text-align: center;
+font-size: 40px;
+    font-weight: 600;
+    width:1200px;
+    color: rgba(0, 0, 0, 0.744);
+    margin-left: 120px;
+
+}
+#mypinfo{
+text-align: center;
+ font-size:17px ;
+    word-spacing: 10px;
+    line-height:30px ;
+   margin-left: 120px;
+    width:1200px;
+    color: grey;
+    padding-top: 15px;;
+}
+#cards{
+    width:1260px;
+    height: 920px;
+    border:1px solid white;
+    margin-left:120px;
+    margin-top:60px;
+    display:grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    gap:20px;
+}
+.ca{
+    border:1px solid white;
+    height:450px;
+    width:300px;
+}
+.pic{
+    
+    width:300px;
+    height:225px;
+    border:1px solid white;
+    object-fit: cover;
+    
+    img{
+        width:300px;
+        height:225px;
+    }
+    
+}
+.desc{
+    width:300px;
+    height:115px;
+    border:1px solid white;
+    
+}
+
+
+.p8{
+    font-size: 20px;
+     font-weight: 700;
+     color: rgba(0, 0, 0, 0.751);
+}
+.p9{
+     font-size: 17px;
+    word-spacing:3px; 
+    line-height: 27px;
+     color: grey;
+}
+.newbutton{
+    background-color: black;
+    color:white ;
+    font-weight: 700;
+    width:100px;
+     height:35px;
+     margin-top:30px; 
+     border-radius:5px;
+     
+    
+}
+#myresume{
+    width:1200px;
+    border:1px solid white;
+    height:400px;
+    margin-left:120px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns:600px 600px;
+}
+.myr{
+    border:1px solid white;
+}
+#p10{
+font-size: 40px;
+    font-weight: 600;
+    width:1200px;
+    color: rgba(0, 0, 0, 0.744);
+    margin-top:50px; ;
+}
+#p11{
+font-size: 17px;
+    word-spacing:3px; 
+    line-height: 27px;
+     color: grey;
+
+}
+#viewmore{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.744);
+    font-weight: 700;
+    font-size:12PX;
+    width:100px;
+
+}
+#viewmore:hover{
+    background-color: rgba(128, 128, 128, 0.263);
+}
+#myresumecontent{
+font-size: 17px;
+    word-spacing:3px; 
+    line-height: 27px;
+     color: grey;
+
+grid-template-columns:auto auto ;
+gap:5px;
+justify-content: space-around;
+align-items: center;
+}
+.iconbutton{
+
+    height:48px;
+    width:  46px;
+    text-align: center;
+    padding-top:8px ;
+    background-color: rgba(0, 0, 0, 0.797);
+    color: beige;
+    font-size:22px ;
+    border-radius:5px; 
+    
+}
+#myrinner{
+    margin-top: 50px;
+    margin-left: 120px;;
+    width:400px;
+    height:200px;
+    display:grid;
+    grid-template-columns:auto auto ;
+}
+#wcs{
+    margin-top:60px ;
+text-align: center;
+font-size: 40px;
+    font-weight: 600;
+    width:1200px;
+    color: rgba(0, 0, 0, 0.744);
+    margin-left: 120px;
+
+}
+#wcsinfo{
+    text-align: center;
+ font-size:17px ;
+    word-spacing: 10px;
+    line-height:30px ;
+   margin-left: 120px;
+    width:1200px;
+    color: grey;
+    padding-top: 15px;;
+
+}
+#MAD{
+    width:900px;
+    height:330px;
+    margin-top: 180PX;
+    margin-left: 300px;;
+    border:1px solid white ;
+    display:grid ;
+    grid-template-columns:450px 450px ;
+}
+#smallimages{
+    width:180px;
+display: flex;
+justify-content: space-between;
+    border:1px solid white;
+    #d3{
+        border-right:none;
+        img{
+            opacity:100%;
+        }
+    }
+    div{
+
+        width:50px;
+         border:1px solid gray;
+         justify-content: center;
+         align-items: center;
+         justify-items: center;
+         align-content: center;
+         border-left: none;
+         border-top: none;
+         border-bottom: none;
+
+        img{
+            width:38px;
+            object-fit: cover;
+            border-radius: 2px;;
+            opacity: 70%
+           
+        }
+    }
+}
+#MADimage{
+    img{
+        margin-left: 90px;
+       width:300px;
+       height:330px; 
+    }
+}
+#p12{
+    font-size: 40px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.728);
+}
+#p13{
+    font-size:17px ;
+    font-weight: 400;
+    word-spacing: 5px;
+    line-height:25px ;
+    color: rgba(0, 0, 0, 0.721)
+}
+#p14{
+     color: rgba(0, 0, 0, 0.897);
+      font-size:16px ;
+    font-weight: 400;
+    word-spacing: 5px;
+    line-height:25px ;
+    font-weight: 700;
+}
+#p15{
+    fontsize:14px;
+}
+#popularclients{
+    width:500px;
+    height:150px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 550px;;
+}
+#p16{
+    font-size:17px ;
+    word-spacing: 10px;
+    line-height:30px ;
+   
+    
+    color: grey;
+}
+#p17{
+    font-size: 42px;
+    font-weight: 700;
+}
+#contactus{
+    margin-top:80px;
+    width:550px;
+    height:90px;
+    text-align: center;
+    margin-left:500px;
+    #p18{
+font-size: 48px;
+font-weight:800 ;
+color:black(0, 0, 0, 0.806);
+    }
+    #p19{
+        font-size:17px ;
+    word-spacing: 10px;
+    line-height:30px ;
+   font-weight: 500;
+    
+    color: grey;
+}
+    }
+    #lastsecond{
+        border:1px solid white;
+         width:1310px;
+    height:550px;
+    display: grid;
+    grid-template-columns: 545px 745px;
+justify-content: space-around;
+align-items: center;
+ margin-top:150px ;
+ margin-left:100px;
+ box-shadow:0px 0px 5px 5px whitesmoke;
+ border-radius: 10px;
+    
+        
+    }
+    #lastsecond1{
+       border:1px solid black; 
+width:508px;
+height:500px;
+background-color: black;
+border-radius:15px ;
+margin-top:20px;
+margin-left:20px;
+
+
+#p20{
+    color:white;
+    font-size:22px;
+     font-weight: 500;
+     margin-top:40px;
+     margin-left:80px ;
+}
+#p21{
+    color:grey;
+    font-size: 17px;
+    font-weight: 400;
+     margin-left:80px ;
+
+}
+i{
+    color:white;
+    font-size:17px; ;
+     
+
+}
+#lastsecondinner{
+    color:white;
+    display:grid ;
+    grid-template-columns:30px 150px ;
+    gap:10px;
+     margin-left:80px ;
+     margin-top: 25px;
+}
+
+
+    }
+    #lastsecond2{
+border:1px solid white;
+width:708px;
+height:500px;
+display:grid;
+grid-template-columns:auto ;
+border-radius: 15px;
+background-color: white;
+padding:5px;
+label{
+    color:rgb(11, 140, 192);
+    margin:4px;
+   
+}
+p{
+    color:rgb(11, 140, 192);
+}
+#yourm{
+    color:rgb(11, 140, 192);
+}
+button{
+    margin-left: 500px;
+    width:120px;
+    height:40px;
+    background-color: black;
+    color:white;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 4px;
+    margin-top: 50px;;
+    
+}
+input{
+    border: none;
+     border-bottom: 1px solid grey
+}
+    }
+
+    
+#secondlastinner{
+    display:grid;
+    grid-template-columns: auto;
+}
+#namefields{
+    display: grid;
+    grid-template-columns:  auto auto;
+}
+#emailfield{
+    input{
+        width:708px;
+    }
+}
+#radiobuttons{
+width:708px;
+display:flex;
+align-items: center;
+justify-content:space-between;
+text-align: center;
+div{
+    width:80px;
+    height:32px;
+    padding-left:1px; ;
+    font-size:17px;
+    color:gray;
+    margin-left: 0px;
+    text-align: center;
+
+    input{
+        width:80px;
+        transform:scale(0.7);
+        text-align: center;
+    
+    }
+justify-content: baseline
+    
+}
+
+
+
+
+}
+#yourm{
+    border-bottom:1px solid grey ;
+}
+
+
+
+
+#footer{
+    border-radius: 10px;;
+    box-shadow: 1px 1px 5px 5px whitesmoke;
+    color:gray;
+    font-weight: 500;
+    border:1px solid white;
+    width:1310px;
+    height:90px;
+    display: flex;
+justify-content: space-between;
+align-items: center;
+ margin-top:150px ;
+ margin-left:5px;
+ p{
+    margin-left:20px;
+ }
+ #footerin{
+    display: flex;
+    gap:17px;
+    align-items: center;
+    button{
+    
+    width:100px;
+    height:40px;
+    background-color: black;
+    color:white;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 4px;
+    margin-right: 10px;;
+    
+}
+ }
+}

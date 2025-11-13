@@ -1,0 +1,73 @@
+/* h1{ */
+    /* width:200px; */
+    /* border: 1px solid black; */
+    /* margin-left:0px; */
+    
+
+/* }h1:hover{ */
+    /* margin-left:200px; */
+    /* width:400px;
+text-align: center;
+    transition:width 5s;
+    transition:text-align 5s;
+
+} */
+
+#a{
+    width:200px;
+    height:40px;
+    
+    border: 1px solid black;
+    #b{
+    /* width:10px; */
+    height:40px;
+    /* background-color: red;; */
+
+}
+}
+
+#a:hover{
+   #b{
+     /* width:200px;
+    
+    background-color: green;
+    transition: width 5s ease-in-out , background-color 5s ease-in-out; */
+   }
+
+}
+#outer1{
+    width:200px;
+    height:40px;
+    
+    border: 1px solid black;
+    #inner1{
+    /* width:10px; */
+    height:40px;
+    /* background-color: red;; */
+
+}
+}
+#outer1:hover{
+#inner1{
+animation: myanimations 5s linear;
+}
+}
+
+
+
+@keyframes myanimations{
+0%{
+    width:0%;
+    background-color:red ;
+}
+50%{
+
+    width:50%;
+    background-color:yellow ;
+}
+100%{
+    width:100%;
+    background-color:green ;
+}
+
+}
