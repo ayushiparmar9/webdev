@@ -464,12 +464,31 @@ font-size: 40px;
 display: flex;
 justify-content: space-between;
     border:1px solid white;
+
+
     #d3{
         border-right:none;
         img{
             opacity:100%;
         }
+        img:hover{
+            opacity:70%;
+           
+        }
+       
+
     }
+    #d2{
+        img:hover{
+            opacity:100%;
+        }
+    }
+    #d1{
+        img:hover{
+            opacity:100%;
+        }
+    }
+
     div{
 
         width:50px;
@@ -498,6 +517,7 @@ justify-content: space-between;
        height:330px; 
     }
 }
+
 #p12{
     font-size: 40px;
     font-weight: 600;
