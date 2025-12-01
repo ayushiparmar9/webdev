@@ -15,7 +15,7 @@ d.innerText= task;
 const b = document.createElement("button");
 b.classList.add("btn","btn-danger","ms-3");
  b.innerHTML = `<i class="bi bi-trash"></i>delete`;
- b.onclick = ()=>{
+ b.onclick = () =>{
     l.remove();
  };
 
