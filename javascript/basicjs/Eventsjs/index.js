@@ -35,5 +35,35 @@ document.getElementById("smartBulb").classList.remove("On")
     document.getElementById("smartBulb").classList.toggle("On")
  }
 
+ document.getElementById("c1").addEventListener("mouseenter",()=>{
+    fillcolor("pink");
+ });
+ document.getElementById("c2").addEventListener("mouseenter",()=>{
+    fillcolor("voilet");
+ });
+ document.getElementById("c3").addEventListener("mouseenter",()=>{
+    fillcolor("yellow");
+ });
+ document.getElementById("c4").addEventListener("mouseenter",()=>{
+    fillcolor("green");
+ });
+ document.getElementById("c5").addEventListener("mouseenter",()=>{
+    fillcolor("blue");
+ });
+ document.getElementById("c6").addEventListener("mouseenter",()=>{
+    fillcolor("red");
+ });
+ document.getElementById("c7").addEventListener("mouseenter",()=>{
+    fillcolor("aqua");
+ });
+
+
+
+
+
+ function fillcolor(color){
+    document.getElementById("rainbowbulb").style.backgroundColor = color;
+
+ }
 
 

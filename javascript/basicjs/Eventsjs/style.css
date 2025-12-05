@@ -17,3 +17,45 @@ button{
 .On{
     background-color: yellow;
 }
+.color{
+     height:50px;
+    width:50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#rainbowbulb{
+height:100px;
+    width:100px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+#sevencolors{
+    display:flex;
+}
+#c1{
+background-color:pink ;
+}
+#c2{
+background-color:violet ;
+}
+#c3{
+background-color:yellow ;
+}
+
+#c4{
+background-color:green ;
+}
+
+#c5{
+background-color: blue;
+}
+
+#c6{
+background-color:red ;
+}
+#c7{
+background-color: aqua;
+}
+
+
