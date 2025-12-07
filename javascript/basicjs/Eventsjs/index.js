@@ -39,7 +39,7 @@ document.getElementById("smartBulb").classList.remove("On")
     fillcolor("pink");
  });
  document.getElementById("c2").addEventListener("mouseenter",()=>{
-    fillcolor("voilet");
+    fillcolor("violet");
  });
  document.getElementById("c3").addEventListener("mouseenter",()=>{
     fillcolor("yellow");

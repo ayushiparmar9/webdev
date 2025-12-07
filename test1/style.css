@@ -1,0 +1,6 @@
+.card{
+    background-color: bisque;
+}
+.card:hover{
+    background-color: darkgoldenrod;
+}
