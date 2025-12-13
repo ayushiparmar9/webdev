@@ -15,10 +15,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 </head>
-<body><div class="container  bg-info-subtle w-50 p-5">
-    <div  class="text-info"><h1>guess the number</h1></div>
+<body class=""><div class="container p-5">
+  <div class="container  bg-info-subtle w-50 p-5 border border-2 border-danger  rounded-2 shadow">
+    <div  class="text-info mt-3" style="margin-top: 20px;"><h1>guess the number</h1></div>
     <div><p>we have selected a number between 1-10 , lets see if you can guess it</p></div>
-    <div class="d-flex gap-3"><label for="number" >Enter a guess</label>
+    <div class="d-flex gap-3"><label for="number" class="fw-bold" >Enter a guess</label>
         <input type="number" name="guess" id="guess" class="form-control w-50">
         <button class="  btn btn-info" onclick="submit()">submit</button>
         
@@ -27,7 +28,7 @@
 <div id ="box"></div>
 
 </div>
-    
+    </div>
 
 
 
