@@ -12,6 +12,9 @@ const Header =()=>{
             home
           </Link>
           <Link to={"/About"}>about</Link>
+          <Link to ={"/Login"}>login</Link>
+          <Link to ={"/Signup"}>Signup</Link>
+
         </div> 
 
      </div>
