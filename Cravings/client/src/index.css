@@ -1,17 +1,21 @@
 @import "tailwindcss";
 :root {
-  /* Primary */
-  --color-primary: #161E54;
-  --color-primary-hover: #0F163F;
+  /* Primary – Appetite Trigger (Headings / Navbar) */
+  --color-primary: #D62828;          /* Rich food red */
+  --color-primary-hover: #B91D1D;
 
-  /* Secondary */
-  --color-secondary: #F16D34;
-  --color-secondary-hover: #D85F2E;
+  /* Secondary – CTA / Buttons */
+  --color-secondary: #F77F00;        /* Crispy orange */
+  --color-secondary-hover: #E36F00;
 
-  /* Background & Text */
-  --color-background: #BBE0EF;
-  --color-text: #161E54;
+  /* Background */
+  --color-background: #FFF1E6;       /* Warm cream (not white) */
 
-  /* Accent */
-  --color-accent: #FF986A;
+  /* Text */
+  --color-text: #2B2B2B;             /* Deep neutral (better than brown/blue) */
+
+  /* Accent – Freshness / Offers */
+  --color-accent: #2A9D8F;           /* Mint green (modern & fresh) */
 }
+
+

@@ -11,12 +11,13 @@ import UserTransactions from '../../components/userDashboard/UserTransactions';
 
 const UserDashboard = () => {
     const [active, setActive]=useState("overview");
+    const[isCollapsed ,setIsCollapsed] = useState(false);
   return (
     <>
 
     <div className=' w-full h-[90vh] flex'>
-        <div className='border bg-(--color-background) border-green-500  w-2/10  '><UserSideBar active={active} setActive={setActive}/></div>
-        <div className='border border-amber-700 w-8/10'> 
+        <div className= {`bg-(--color-background)   shadow-2xl duration-300 ${isCollapsed?"w-2/60":"w-12/60"}  `}><UserSideBar active={active} setActive={setActive} isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed}/></div>
+        <div className=' w-58/60'> 
         {active==="overview"&&<UserOverview/>}
          {active==="profile"&&<UserProfile/>}
           {active==="orders"&&<UserOrder/>}
