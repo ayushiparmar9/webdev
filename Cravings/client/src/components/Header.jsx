@@ -1,10 +1,31 @@
 import React from "react";
 import clogo from "../assets/clogo.png";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
+  const { user, isLogin,role } = useAuth();
   const navigate = useNavigate();
-    
+  const handleNavigate =()=>{
+switch(role){
+  case "manager":{
+    setRole("manager")
+    navigate("/restaurant-dashboard");
+    break;
+  }
+  case "partner":{
+    setRole("partner")
+    navigate("/rider-dashboard");
+    break;
+  }
+  case "customer":{
+    setRole("customer")
+    navigate("/user-dashboard");
+    break;
+  }
+}
+  }
+
   return (
     <>
       {" "}
@@ -42,16 +63,26 @@ const Header = () => {
             Contact{" "}
           </Link>{" "}
         </div>{" "}
-        <div className="flex-gap-4">
-          {" "}
-          <button onClick={()=>navigate("/login")} className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded ">
-            {" "}
-            Login{" "}
-          </button>{" "}
-          <button onClick={()=>navigate("/register")} className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded ">
-            {" "}
-            Register{" "}
-          </button>{" "}
+        <div className="flex-gap-5">
+          {isLogin ? (
+            <div onClick={()=> navigate("/user-dashboard") } className="cursor-pointer">{user?.fullName}</div>
+          ) : (
+            <>
+              <button
+                onClick={() => navigate("/login")}
+                className="bg-(--color-secondary)  shadow-2xl py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded-2xl "
+              >
+                Login
+              </button>
+
+              <button
+                onClick={() => navigate("/register")}
+                className="bg-(--color-secondary) shadow-2xl py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded-2xl "
+              >
+                Register
+              </button>
+            </>
+          )}
         </div>{" "}
       </div>{" "}
     </>

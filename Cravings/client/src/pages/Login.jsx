@@ -2,11 +2,15 @@ import React from "react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import ForgetPasswordModel from "../components/publicModels/ForgetPasswordModel";
 
   import { useNavigate } from "react-router-dom";
+  import { useAuth } from "../context/AuthContext";
 
-const Login = () => {
+const Login = ({}) => {
+  const{setUser ,setIsLogin ,setRole}=useAuth();
   const navigate = useNavigate()
+  const[isForgetPasswordModelOpen, setIsForgetPasswordModalOpen]=useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -55,8 +59,35 @@ const Login = () => {
     try {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
+      //connect 
+      setUser(res.data.data);
+      setIsLogin(true);
+      //backup
+      sessionStorage.setItem("cravinguser", JSON.stringify(res.data.data));
       handleClearForm();
-      navigate("/user-dashboard")
+switch(res.data.data.role){
+  case "manager":{
+    setRole("manager")
+    navigate("/restaurant-dashboard");
+    break;
+  }
+  case "partner":{
+    setRole("partner")
+    navigate("/rider-dashboard");
+    break;
+  }
+  case "customer":{
+    setRole("customer")
+    navigate("/user-dashboard");
+    break;
+  }
+}
+
+
+
+
+     
+
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -106,7 +137,16 @@ const Login = () => {
                     required
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
+                  
                 </div>
+                <div className="w-full flex justify-end ">
+                  <button className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsForgetPasswordModalOpen(true);
+                    }}>Forget Password?</button>
+                </div>
+                
               </div>
 
               {/* Submit Button */}
@@ -133,6 +173,14 @@ const Login = () => {
           </p>
         </div>
       </div>
+{isForgetPasswordModelOpen && (
+        <ForgetPasswordModel
+          onClose={() => setIsForgetPasswordModalOpen(false)}
+        />
+      )}
+
+
+
     </>
   );
 };

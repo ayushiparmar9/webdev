@@ -10,12 +10,14 @@ const Register = () => {
     mobileNumber: "",
     password: "",
     confirmPassword: "",
+    role: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -26,6 +28,7 @@ const Register = () => {
       mobileNumber: "",
       password: "",
       confirmPassword: "",
+      role: "",
     });
   };
 
@@ -42,7 +45,7 @@ const Register = () => {
 
     if (
       !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
-        formData.email
+        formData.email,
       )
     ) {
       Error.email = "Use Proper Email Format";
@@ -51,7 +54,9 @@ const Register = () => {
     if (!/^[6-9]\d{9}$/.test(formData.mobileNumber)) {
       Error.mobileNumber = "Only Indian Mobile Number allowed";
     }
-
+    if (!formData.role) {
+      Error.role = "PlEASE CHOOSE ANY ONE";
+    }
     setValidationError(Error);
 
     return Object.keys(Error).length > 0 ? false : true;
@@ -104,13 +109,51 @@ const Register = () => {
               <div className="mb-10">
                 <div className="space-y-4">
                   <div>
+                    <div className="flex gap-4 ">
+                      <div className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="manager"
+                          checked={formData.role === "manager"}
+                          value={"manager"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="manager">Restaurant manager</label>
+                      </div>
+                      <div className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="partner"
+                          checked={formData.role === "partner"}
+                          value={"partner"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="partner">partner</label>
+                      </div>
+                      <div className="flex gap-1">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="customer"
+                          checked={formData.role === "customer"}
+                          value={"customer"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="customer">customer</label>
+                      </div>
+                    </div>
+
+                    <div></div>
+                  </div>
+                  <div>
                     <input
                       type="text"
                       name="fullName"
                       placeholder="Full Name"
                       value={formData.fullName}
                       onChange={handleChange}
-                    
                       required
                       className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500  hover:bg-gray-400 transition duration-300 transform hover:"
                     />
@@ -126,7 +169,6 @@ const Register = () => {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleChange}
-                    
                     required
                     className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
@@ -137,7 +179,6 @@ const Register = () => {
                     maxLength="10"
                     value={formData.mobileNumber}
                     onChange={handleChange}
-                  
                     required
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
@@ -147,7 +188,6 @@ const Register = () => {
                     value={formData.password}
                     placeholder="Create Password"
                     onChange={handleChange}
-                    
                     required
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
@@ -157,7 +197,6 @@ const Register = () => {
                     placeholder="Confirm Password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                  
                     required
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
