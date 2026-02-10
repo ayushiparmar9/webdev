@@ -5,6 +5,7 @@ import AuthRouter from "./src/routers/authRouter.js";
 import PublicRouter from "./src/routers/publicRouter.js"
 import UserRouter from "./src/routers/userRouter.js"
 import cloudinary from "./src/config/cloudinary.js";
+import RestaurantRouter from "./src/routers/restaurantRouter.js";
 
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
@@ -18,6 +19,8 @@ app.use(morgan("dev"));
 app.use("/auth", AuthRouter);
 app.use("/public",PublicRouter)
 app.use("/user",UserRouter);
+app.use("/restaurant", RestaurantRouter);
+
 app.get("/", (req, res) => {
   console.log("SERVER IS RUNNING");
 });

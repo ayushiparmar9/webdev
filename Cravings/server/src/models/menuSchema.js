@@ -6,7 +6,7 @@ const menuSchema = mongoose.Schema({
     required:true,
 
    } ,
-   dishName:{
+   itemName:{
     type:String,
     required:true,
    },
@@ -16,7 +16,7 @@ const menuSchema = mongoose.Schema({
    },
    type:{
     type:String,
-    enum:['non-veg','vegan','egg','jain','gluten-free','conatins-nuts','dairy'],
+    enum:[ 'veg','non-veg','vegan','egg','jain','gluten-free','conatins-nuts','dairy'],
     required:true,
    },
    description:{
@@ -24,6 +24,14 @@ const menuSchema = mongoose.Schema({
     type:String,
     required:true,
    
+   },
+   servingSize:{
+type:String,
+    required:true,
+   },
+    preparationTime:{
+type:String,
+    required:true,
    },
    price:{
     type:String,
@@ -35,7 +43,7 @@ const menuSchema = mongoose.Schema({
     enum:['available','unavailable','removed'],
     default:'available'
    },
-   image:{
+   images:{
     type:[
         {
             url:{
