@@ -66,7 +66,7 @@ const Login = ({}) => {
       sessionStorage.setItem("cravinguser", JSON.stringify(res.data.data));
       handleClearForm();
 switch(res.data.data.role){
-  case "manager":{
+  case "manager":{  
     setRole("manager")
     navigate("/restaurant-dashboard");
     break;

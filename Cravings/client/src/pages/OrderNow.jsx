@@ -60,7 +60,7 @@ useEffect(() => {
 
 
 
-
+//we want to get all restaurants as soon as we load
   useEffect(() => {
     fetchAllRestaurant();
   }, []);
