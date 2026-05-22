@@ -1,0 +1,44 @@
+import React from "react";
+import Header from "./components/Header";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import { Toaster } from "react-hot-toast";
+import UserDashboard from "./pages/dashboards/UserDashboard";
+import RiderDashboard from "./pages/dashboards/RiderDashboard";
+import RestaurantDashboard from "./pages/dashboards/RestaurantDashboard";
+import AdminDashboard from "./pages/dashboards/AdminDashboard";
+import OrderNow from "./pages/OrderNow";
+import RestaurantDisplayMenu from "./pages/RestaurantDisplayMenu";
+import CheckoutPage from "./pages/CheckoutPage";
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Toaster />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/user-dashboard" element={<UserDashboard/>}/>
+          <Route path="/rider-dashboard" element={<RiderDashboard/>}/>
+          <Route path="/restaurant-dashboard" element={<RestaurantDashboard/>}/>
+          <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
+          <Route path="/order-now" element={<OrderNow />} />
+          {/* <Route path="/restaurant/:id" element={<RestaurantDisplayMenu />} /> */}
+           <Route path="/restaurant-menu" element={<RestaurantDisplayMenu />} />
+           <Route path="/checkout-page" element={<CheckoutPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default App;

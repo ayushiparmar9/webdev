@@ -1,0 +1,21 @@
+@import "tailwindcss";
+:root {
+  /* Primary – Appetite Trigger (Headings / Navbar) */
+  --color-primary: #D62828;          /* Rich food red */
+  --color-primary-hover: #B91D1D;
+
+  /* Secondary – CTA / Buttons */
+  --color-secondary: #F77F00;        /* Crispy orange */
+  --color-secondary-hover: #E36F00;
+
+  /* Background */
+  --color-background: #FFF1E6;       /* Warm cream (not white) */
+
+  /* Text */
+  --color-text: #2B2B2B;             /* Deep neutral (better than brown/blue) */
+
+  /* Accent – Freshness / Offers */
+  --color-accent: #2A9D8F;           /* Mint green (modern & fresh) */
+}
+
+

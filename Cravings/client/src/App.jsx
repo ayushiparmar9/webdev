@@ -13,6 +13,8 @@ import RestaurantDashboard from "./pages/dashboards/RestaurantDashboard";
 import AdminDashboard from "./pages/dashboards/AdminDashboard";
 import OrderNow from "./pages/OrderNow";
 import RestaurantDisplayMenu from "./pages/RestaurantDisplayMenu";
+import CheckoutPage from "./pages/CheckoutPage";
+import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 
 const App = () => {
   return (
@@ -31,7 +33,10 @@ const App = () => {
           <Route path="/restaurant-dashboard" element={<RestaurantDashboard/>}/>
           <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
           <Route path="/order-now" element={<OrderNow />} />
-          <Route path="/restaurant/:id" element={<RestaurantDisplayMenu />} />
+          {/* <Route path="/restaurant/:id" element={<RestaurantDisplayMenu />} /> */}
+           <Route path="/restaurant-menu" element={<RestaurantDisplayMenu />} />
+           <Route path="/checkout-page" element={<CheckoutPage />} />
+           <Route path="/paymentSuccess" element={<PaymentSuccessPage />} />
         </Routes>
       </BrowserRouter>
     </>
