@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
  import Loading from "../Loading";
+ import { useNavigate } from "react-router-dom";
 
 const UserOrder = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [orders, setOrders] = useState();
+  const navigate = useNavigate();
 
   const fetchAllPlacedOrder = async () => {
     setIsLoading(true);
@@ -108,9 +110,16 @@ const UserOrder = () => {
                       {new Date(order.createdAt).toLocaleDateString()}
                     </td>
                     <td className="ps-4 py-3 text-gray-600">
-                      <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition">
-                        Track Order
-                      </button>
+                    <button
+  onClick={() =>
+    navigate("/paymentSuccess", {
+      state: order,
+    })
+  }
+  className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition"
+>
+  View Order
+</button>
                     </td>
                   </tr>
                 ))}

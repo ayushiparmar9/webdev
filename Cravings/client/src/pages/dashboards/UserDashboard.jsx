@@ -57,7 +57,7 @@ const ActiveTab = location.state?.tab || "overview";
         <div className=' w-58/60'> 
         {active==="overview"&&<UserOverview/>}
          {active==="profile"&&<UserProfile/>}
-          {active==="orders"&&<UserOrder/>}
+          {active==="order"&&<UserOrder/>}
            {active==="transaction"&&<UserTransactions/>}
             {active==="helpdesk"&&<UserHelpDesk/>}
         </div>

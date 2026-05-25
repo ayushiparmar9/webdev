@@ -207,7 +207,7 @@ const PaymentSuccessPage = () => {
             {/* Info Card */}
             <button
               onClick={() =>
-                navigate("/user-dashboard", { state: { tab: "orders" } })
+                navigate("/user-dashboard", { state: { tab: "order" } })
               }
               style={{ backgroundColor: "var(--color-primary)" }}
               className="text-white w-full font-bold py-3 rounded-lg hover:opacity-90 transition"
