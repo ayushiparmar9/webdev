@@ -4,23 +4,33 @@ import toast from "react-hot-toast";
 import api from "../config/Api";
 import ForgetPasswordModel from "../components/publicModels/ForgetPasswordModel";
 
-  import { useNavigate } from "react-router-dom";
-  import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const Login = ({}) => {
-  const{setUser ,setIsLogin ,setRole}=useAuth();
-  const navigate = useNavigate()
-  const[isForgetPasswordModelOpen, setIsForgetPasswordModalOpen]=useState(false);
+const Login = () => {
+  const { setUser, setIsLogin, setRole } = useAuth();
+
+  const navigate = useNavigate();
+
+  const [isForgetPasswordModelOpen, setIsForgetPasswordModalOpen] =
+    useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
   const [isLoading, setIsLoading] = useState(false);
+
   const [validationError, setValidationError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleClearForm = () => {
@@ -48,6 +58,7 @@ const Login = ({}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setIsLoading(true);
 
     if (!validate()) {
@@ -58,38 +69,47 @@ const Login = ({}) => {
 
     try {
       const res = await api.post("/auth/login", formData);
+
       toast.success(res.data.message);
-      //connect 
+
+      // connect
       setUser(res.data.data);
       setIsLogin(true);
-      //backup
-      sessionStorage.setItem("cravinguser", JSON.stringify(res.data.data));
+
+      // backup
+      sessionStorage.setItem(
+        "cravinguser",
+        JSON.stringify(res.data.data)
+      );
+
       handleClearForm();
-switch(res.data.data.role){
-  case "manager":{  
-    setRole("manager")
-    navigate("/restaurant-dashboard");
-    break;
-  }
-  case "partner":{
-    setRole("partner")
-    navigate("/rider-dashboard");
-    break;
-  }
-  case "customer":{
-    setRole("customer")
-   navigate("/user-dashboard", { state: { tab: "overview" } });
-    break;
-  }
-}
 
+      switch (res.data.data.role) {
+        case "manager": {
+          setRole("manager");
+          navigate("/restaurant-dashboard");
+          break;
+        }
 
+        case "partner": {
+          setRole("partner");
+          navigate("/rider-dashboard");
+          break;
+        }
 
+        case "customer": {
+          setRole("customer");
 
-     
+          navigate("/user-dashboard", {
+            state: { tab: "overview" },
+          });
 
+          break;
+        }
+      }
     } catch (error) {
       console.log(error);
+
       toast.error(error.message);
     } finally {
       setIsLoading(false);
@@ -98,89 +118,137 @@ switch(res.data.data.role){
 
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
-        <div className="max-w-xl mx-auto">
-          {/* Header */}
+      <div className="min-h-screen bg-orange-50 py-10 px-4 flex items-center justify-center">
+
+        <div className="w-full max-w-md">
+
+          {/* Heading */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
-            <p className="text-lg text-gray-600">
-              You are 1 step away to stop your Cavings
+
+            <h1 className="text-4xl font-bold text-(--color-primary) mb-3">
+              Welcome Back 🍔
+            </h1>
+
+            <p className="text-gray-600 text-lg">
+              Login to continue your delicious journey
             </p>
+
           </div>
 
-          {/* Form Container */}
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
+          {/* Form Card */}
+          <div className="bg-white rounded-3xl shadow-lg border border-orange-100 overflow-hidden">
+
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
               className="p-8"
             >
-              {/* Personal Information */}
-              <div className="mb-10">
-                <div className="space-y-4">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-                  />
 
-                  <input
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    placeholder="Enter Password"
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
-                  />
-                  
-                </div>
-                <div className="w-full flex justify-end ">
-                  <button className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsForgetPasswordModalOpen(true);
-                    }}>Forget Password?</button>
-                </div>
-                
+              {/* Email */}
+              <div className="mb-5">
+
+                <label className="block mb-2 font-semibold text-gray-700">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-orange-400 transition"
+                />
+
               </div>
 
-              {/* Submit Button */}
-              <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
+              {/* Password */}
+              <div className="mb-3">
+
+                <label className="block mb-2 font-semibold text-gray-700">
+                  Password
+                </label>
+
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  placeholder="Enter your password"
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-orange-400 transition"
+                />
+
+              </div>
+
+              {/* Forget Password */}
+              <div className="flex justify-end mb-6">
+
+                <button
+                  className="text-sm text-orange-500 hover:text-orange-600 cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsForgetPasswordModalOpen(true);
+                  }}
+                >
+                  Forget Password?
+                </button>
+
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-4">
+
                 <button
                   type="submit"
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
+                  disabled={isLoading}
+                  className="flex-1 bg-(--color-primary) text-white font-bold py-3 rounded-xl hover:bg-(--color-secondary) transition duration-300 hover:scale-[1.02]"
                 >
-                  Login
+                  {isLoading ? "Logging In..." : "Login"}
                 </button>
+
                 <button
                   type="reset"
-                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105"
+                  className="flex-1 bg-gray-200 text-gray-700 font-bold py-3 rounded-xl hover:bg-gray-300 transition duration-300 hover:scale-[1.02]"
                 >
-                  Clear Form
+                  Clear
                 </button>
+
               </div>
+
+              {/* Register Redirect */}
+              <p className="text-center mt-6 text-gray-600">
+
+                Don't have an account?{" "}
+
+                <span
+                  onClick={() => navigate("/register")}
+                  className="text-orange-500 font-semibold cursor-pointer hover:underline"
+                >
+                  Register
+                </span>
+
+              </p>
+
             </form>
           </div>
 
-          {/* Footer Note */}
-          <p className="text-center text-gray-600 mt-8 text-sm">
-            All fields marked are mandatory. We respect your privacy.
+          {/* Footer */}
+          <p className="text-center text-gray-500 mt-6 text-sm">
+            Cravings • Fresh food delivered with love 🍕
           </p>
+
         </div>
       </div>
-{isForgetPasswordModelOpen && (
+
+      {isForgetPasswordModelOpen && (
         <ForgetPasswordModel
-          onClose={() => setIsForgetPasswordModalOpen(false)}
+          onClose={() =>
+            setIsForgetPasswordModalOpen(false)
+          }
         />
       )}
-
-
-
     </>
   );
 };
