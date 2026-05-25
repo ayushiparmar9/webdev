@@ -65,7 +65,26 @@ switch(role){
         </div>{" "}
         <div className="flex-gap-5">
           {isLogin ? (
-            <div onClick={()=> navigate("/user-dashboard") } className="cursor-pointer">{user?.fullName}</div>
+           <div
+  onClick={() => navigate("/user-dashboard", {
+  state: { tab: "overview" }
+})}
+  className="cursor-pointer flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300"
+>
+  <div className="h-10 w-10 rounded-full bg-white text-orange-500 flex items-center justify-center font-bold text-lg shadow-md">
+    {user?.fullName?.charAt(0).toUpperCase()}
+  </div>
+
+  <div className="flex flex-col">
+    <span className="text-xs text-gray-200">
+      Welcome Back
+    </span>
+
+    <span className="text-white font-semibold tracking-wide">
+      {user?.fullName}
+    </span>
+  </div>
+</div>
           ) : (
             <>
               <button

@@ -79,6 +79,12 @@ useEffect(() => {
     <>
       <div className="bg-gray-100 p-3 h-screen">
         <div className="flex flex-col items-center justify-center">
+          <button
+  onClick={() => navigate(-1)}
+  className="self-start mb-4 text-orange-500 font-semibold hover:text-orange-600"
+>
+  ← Back
+</button>
           <h1 className="text-3xl font-bold text-gray-800">Order Now</h1>
           <p className="text-gray-600 mt-2">
             Browse our menu and place your order now!
@@ -106,7 +112,9 @@ useEffect(() => {
         <div
           key={idx}
           className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
-          onClick={() => handleResturantClick(restaurant)}
+          onClick={() => handleResturantClick(restaurant)
+            
+          }
         >
           {/* Restaurant Image */}
           <img

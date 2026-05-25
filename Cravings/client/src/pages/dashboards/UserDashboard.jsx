@@ -15,7 +15,8 @@ const UserDashboard = () => {
 
 
 const { role, isLogin } = useAuth();
-const ActiveTab = useLocation().state.tab;
+const location = useLocation();
+const ActiveTab = location.state?.tab || "overview";
   const navigate = useNavigate();
     
     const [active, setActive] = useState(ActiveTab || "overview");
